@@ -10,6 +10,12 @@ namespace tpmodul5_1302200119
     {
         static void Main(string[] args)
         {
+            SayaTubeVideo vid1 = new SayaTubeVideo("Tutorial Design " +
+                "By Contract - Muhammad Qalbun Saliim Bakhri");
+            vid1.IncreasePlayCount(4);
+            vid1.PrintVideoDetails();
+            vid1.IncreasePlayCount(6);
+            vid1.PrintVideoDetails();
         }
     }
 }
