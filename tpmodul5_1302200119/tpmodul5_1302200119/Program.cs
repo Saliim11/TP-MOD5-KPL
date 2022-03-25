@@ -14,7 +14,7 @@ namespace tpmodul5_1302200119
                 "By Contract - Muhammad Qalbun Saliim Bakhri");
             vid1.IncreasePlayCount(4);
             vid1.PrintVideoDetails();
-            vid1.IncreasePlayCount(6);
+            vid1.IncreasePlayCount(2147483647);
             vid1.PrintVideoDetails();
         }
     }

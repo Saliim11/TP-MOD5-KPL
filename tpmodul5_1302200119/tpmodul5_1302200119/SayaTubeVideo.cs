@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace tpmodul5_1302200119
 
         public SayaTubeVideo(string title)
         {
+            Debug.Assert(title.Length <= 10 && title != null, "ketentuan judul tidak cocok");
             this.title = title;
 
             const string chars = "0123456789";
@@ -26,7 +28,19 @@ namespace tpmodul5_1302200119
 
         public void IncreasePlayCount(int x)
         {
-            this.playCount += x;
+            //precondition
+            Debug.Assert(x <= 10000000, "masukkan angka yang lebih kecil!");
+            try
+            {
+                this.playCount = checked(this.playCount + x);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("\nTerjadi error Overflow: "+e.Message);
+                Console.WriteLine("playCount akan ditambah 1");
+                this.playCount++;
+            }
+            
         }
 
         public void PrintVideoDetails()
